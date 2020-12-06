@@ -1,0 +1,127 @@
+body{
+    background-color: #eaeaea !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0%;
+    font-family:helvetica;
+    }
+.input_form_field p{
+    text-align: center;
+}
+
+.error{
+    color: #E8175D !important;
+}
+
+
+.navbar{
+    background-color: #283593;
+    border-radius: 0px !important;
+}
+
+.navbar-brand{
+    color:white;
+    
+}
+
+.badge-secondary{
+    margin:10px;
+    font-size: 14px !important;
+    background-color: #283593 !important;
+    border-radius: 4px !important;
+}
+
+.badge-danger{
+    margin:10px;
+    font-size: 14px !important;
+    background-color: #e53935 !important;
+    border-radius: 4px !important;
+}
+
+.card{
+    width: 60%;
+    margin:auto;
+    
+}
+
+.card-body label{
+    padding:5px;
+    color: #828282;
+    font-size: 15px;
+
+}
+/*#bg{
+    position:relative;
+    color: #A8A7A7   #CC527A   #E8175D   #474747   #363636 ;
+    height: auto;}*/
+.card-body{
+    background-color: white;
+    border-radius: 10px;
+    padding:30px;
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+}
+h1 {
+    width: auto;
+    background-color: transparent;
+    }
+
+p{color:rgb(255, 255, 255);}
+
+legend{
+    color:rgb(255, 255, 255);
+    font-size: large;
+}
+
+label{
+    width: 240px;
+    display: inline-block;
+}
+
+button, input, select, textarea{
+    color: black !important;
+}
+
+select, input[type="text"]{
+    width:70%;
+    box-sizing:border-box;
+    color: black !important;
+
+  }
+
+  select option { color: black; }
+
+
+.wrapper {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.button{
+    height:40px;
+    width:9%;
+    border-radius:50px;
+    border:rgba(0,0,0,.3) 0px solid;
+    box-sizing:border-box;
+    padding:10px;
+    margin-bottom:30px;
+    background:#90c843;
+    color:#FFF;
+    font-weight:bold;
+    font-size: 12pt;
+    transition:background .4s;
+    cursor:pointer;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  

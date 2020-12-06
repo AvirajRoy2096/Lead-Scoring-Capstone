@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Lead Scoring.html</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./public/index.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Lead Scoring</a>
+  </nav>
+  <div id="bg">
+    <div class="container">
+      <div class="card-body">
+        <span class="badge badge-secondary">Please fill the details:</span>
+        <br/>
+        <span class="badge badge-pill badge-danger" id="error_validation"></span>
+        <form>
+          <fieldset>
+            <div class='row'>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="total_visits_error">Total Visits</label>
+                      <br />
+                      <input id="total_visits" type="number" min="0" name="total_visits"
+                        oninput="validity.valid||(value='');" />
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="total_time_spent_on_website_error">Total time spent on website</label>
+                      <br />
+                      <input id="total_time_spent_on_website" type="number" min="0" name="total_time"
+                        oninput="validity.valid||(value='');" />
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="lead_origin_error">Lead Origin</label><br />
+                      <select id="lead_origin" required>
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Landing Page Submission</option>
+                        <option value="2">API</option>
+                        <option value="3">Lead Add Form</option>
+                        <option value="4">Others</option>
+                      </select>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="lead_source_error">Lead Source</label><br />
+                      <select id="lead_source">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Direct Traffic</option>
+                        <option value="2">Olark Chat</option>
+                        <option value="3">Google</option>
+                        <option value="4">Reference</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="specialization_error">Specialization</label><br />
+                      <select id="specialization">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Business Administration</option>
+                        <option value="2">Supply Chain Management</option>
+                        <option value="3">IT Projects Management</option>
+                        <option value="4">Finance Management</option>
+                        <option value="5">Human Resource Management</option>
+                        <option value="6">Marketing Management</option>
+                        <option value="7">Banking,Investment And Insurance</option>
+                        <option value="8">Operations Management</option>
+                        <option value="9">E-Business</option>
+                        <option value="10">others</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="how_did_you_hear_about_x_education_error">How did you hear about x education?</label><br />
+                      <select id="how_did_you_hear_about_x_education">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Online Search</option>
+                        <option value="2">Word Of Mouth</option>
+                        <option value="3">Student of SomeSchool</option>
+                        <option value="4">others</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="what_is_your_current_occupation_error">Current occupation</label><br />
+                      <select id="what_is_your_current_occupation">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Unemployed</option>
+                        <option value="2">Student</option>
+                        <option value="3">Working Professional</option>
+                        <option value="4">others</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="tags_error">Tags</label><br />
+                      <select id="tags">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Interested in other courses</option>
+                        <option value="2">Ringing</option>
+                        <option value="3">Will revert after reading the email</option>
+                        <option value="4">Already a student</option>
+                        <option value="5">others</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="lead_quality_error">Lead Quality</label><br />
+                      <select id="lead_quality">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Low in Relevance</option>
+                        <option value="2">Not Sure</option>
+                        <option value="3">Might be</option>
+                        <option value="4">Worst</option>
+                        <option value="5">High in Relevance</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="lead_profile_error">Lead Profile</label><br />
+                      <select id="lead_profile">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Potential Lead</option>
+                        <option value="2">Other Leads</option>
+                        <option value="3">others</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+              <div class='col-sm-6 input_form_field'>
+                <div class='row'>
+                  <div class='col-sm-7 input_form_field'>
+                    <p>
+                      <label id="last_notable_activity_error">Last Notable Activity</label><br />
+                      <select id="last_notable_activity">
+                        <option value="0" selected="selected">Select an Option</option>
+                        <option value="1">Modified</option>
+                        <option value="2">Email Opened</option>
+                        <option value="3">Email Link Clicked</option>
+                        <option value="4">Email Bounced</option>
+                        <option value="5">Unreachable</option>
+                        <option value="6">Unsubscribed</option>
+                        <option value="7">Had a Phone Conversation</option>
+                        <option value="8">Olark Chat Conversation</option>
+                        <option value="9">SMS Sent</option>
+                        <option value="10">Page Visited on Website</option>
+                        <option value="11">others</option>
+                      </select>
+                    </p>
+                  </div>
+                  
+                </div>
+              </div>
+
+            </div>
+
+
+          </fieldset>
+        </form>
+        <button type="button" class="btn" style="float: right;background-color: #283593 !important;color:white !important" onclick="submit_data()">Predict</button><br>
+      </div>
+
+    </div>
+
+    <div class="container" style="margin-top: 10px; margin-bottom: 20px;">
+      <div class="card-body">
+        <span class="badge badge-secondary">Your Results:</span>
+        <br/>
+        <label >Conversion Status <span id="out" style="color: rgb(0, 0, 0); font-size: 20px;margin: 5px;"></span></label>
+        <br/>
+        <label>Score <span id="out_score" style="color: rgb(0, 0, 0); font-size: 20px;margin: 5px;"></span></label>
+      </div>
+    </div>
+
+  </div>
+</body>
+<script>
+  // Function called upon clicking predict button
+  function submit_data() {
+    document.getElementById("error_validation").innerText = ""
+    let error_keys = []
+    let last_notable_activity = document.getElementById("last_notable_activity"); //targetting html element
+    last_notable_activity = last_notable_activity.options[last_notable_activity.selectedIndex].text //setting the value of html element inside a variable
+    if (last_notable_activity == "Select an Option") {
+      //return document.getElementById('last_notable_activity_error').innerText = "Please select an option"
+      error_keys.push('last_notable_activity_error')
+    }
+
+
+    let lead_quality = document.getElementById("lead_quality");
+    lead_quality = lead_quality.options[lead_quality.selectedIndex].text
+    if (lead_quality == "Select an Option") {
+      //return document.getElementById('lead_quality_error').innerText = "Please select an option"
+      error_keys.push('lead_quality_error')
+    }
+
+
+    let lead_profile = document.getElementById("lead_profile");
+    lead_profile = lead_profile.options[lead_profile.selectedIndex].text
+    if (lead_profile == "Select an Option") {
+      //return document.getElementById('lead_profile_error').innerText = "Please select an option"
+      error_keys.push('lead_profile_error')
+    }
+
+    let lead_origin = document.getElementById("lead_origin");
+    lead_origin = lead_origin.options[lead_origin.selectedIndex].text
+    if (lead_origin == "Select an Option") {
+      //return document.getElementById('lead_origin_error').innerText = "Please select an option"
+      error_keys.push('lead_origin_error')
+    }
+
+    let lead_source = document.getElementById("lead_source");
+    lead_source = lead_source.options[lead_source.selectedIndex].text
+    if (lead_source == "Select an Option") {
+      //return document.getElementById('lead_source_error').innerText = "Please select an option"
+      error_keys.push('lead_source_error')
+    }
+
+    let specialization = document.getElementById("specialization");
+    specialization = specialization.options[specialization.selectedIndex].text
+    if (specialization == "Select an Option") {
+      //return document.getElementById('specialization_error').innerText = "Please select an option"
+      error_keys.push('specialization_error')
+    }
+
+    let how_did_you_hear_about_x_education = document.getElementById("how_did_you_hear_about_x_education");
+    how_did_you_hear_about_x_education = how_did_you_hear_about_x_education.options[how_did_you_hear_about_x_education.selectedIndex].text
+    if (how_did_you_hear_about_x_education == "Select an Option") {
+      //return document.getElementById('how_did_you_hear_about_x_education_error').innerText = "Please select an option"
+      error_keys.push('how_did_you_hear_about_x_education_error')
+    }
+
+    let what_is_your_current_occupation = document.getElementById("what_is_your_current_occupation");
+    what_is_your_current_occupation = what_is_your_current_occupation.options[what_is_your_current_occupation.selectedIndex].text
+    if (what_is_your_current_occupation == "Select an Option") {
+      //return document.getElementById('what_is_your_current_occupation_error').innerText = "Please select an option"
+      error_keys.push('what_is_your_current_occupation_error')
+    }
+
+    let  total_visits =document.getElementById("total_visits").value
+    if (!total_visits) {
+      //return document.getElementById('what_is_your_current_occupation_error').innerText = "Please select an option"
+      error_keys.push('total_visits_error')
+    }
+    let total_time_spent_on_website = document.getElementById("total_time_spent_on_website").value
+    if (!total_time_spent_on_website) {
+      //return document.getElementById('what_is_your_current_occupation_error').innerText = "Please select an option"
+      error_keys.push('total_time_spent_on_website_error')
+    }
+
+    let tags = document.getElementById("tags");
+    tags = tags.options[tags.selectedIndex].text
+    if (tags == "Select an Option") {
+      //return document.getElementById('tags_error').innerText = "Please select an option"
+      error_keys.push('tags_error')
+    }
+    if (error_keys.length > 0) {
+      return error_keys.map(item => {
+        document.getElementById("error_validation").innerText = "Please fill the required fields"
+        return document.getElementById(item).classList.add('error')
+      })
+    }
+
+
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+
+    //used to make server request
+    fetch("https://lead-scoring.herokuapp.com/predict", {
+      method: "POST",
+      body: JSON.stringify({
+        "total_visits": [parseInt(document.getElementById("total_visits").value)],
+        "total_time_spent_on_website": [parseInt(document.getElementById("total_time_spent_on_website").value)],
+        "lead_origin": [lead_origin],
+        "lead_source": [lead_source],
+        "specialization": [specialization],
+        "how_did_you_hear_about_x_education": [how_did_you_hear_about_x_education],
+        "what_is_your_current_occupation": [what_is_your_current_occupation],
+        "tags": [tags],
+        "lead_quality": [lead_quality],
+        "lead_profile": [lead_profile],
+        "last_notable_activity": [last_notable_activity]
+      }),
+      headers: myHeaders
+    })
+
+      //resolving promise
+      .then(res => (res.json())).then(res => {
+        let obj = res
+        document.getElementById("out").innerText = res['conversion_status'] == '1' ? 'Converted' : 'Not Converted'
+        document.getElementById("out_score").innerText = res['score']
+      })
+      //exception handling of promise
+      .catch(err => console.log(err))
+  }
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</html>
