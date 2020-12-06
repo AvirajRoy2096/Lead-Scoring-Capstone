@@ -62,7 +62,8 @@ Integration of course recommender into chat bots to suggest to the user the cour
 
 Since the ‘Email opened’ last notable activity has a good conversion rate of 40%. The company can go about increasing this interaction rate by reducing the output email for a particular user rather they can go about mentioning free course contents that the user might be interested in.
 
-
+Deployment-
+Made with Heroku app with the final model
 
 
 
